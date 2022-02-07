@@ -15,13 +15,14 @@ app.get("/",function(req,res){
       response.on("data",function(data){
         const weatherData = JSON.parse(data)
         const desc = weatherData.weather[0].description
-        const temp = weatherData.main.temp
+        const temper = String(weatherData.main.temp)
+
         const icon = weatherData.weather[0].icon
         console.log(icon);
         const iconURL = "http://openweathermap.org/img/wn/"+icon+"@2x.png"
         res.write(desc)
-        res.write(temp)
-        res.write("<img src=" + iconURL + "/>")
+
+        res.write(temper)
         res.send()
       })
     })
@@ -30,6 +31,6 @@ app.get("/",function(req,res){
 })
 
 
-app.listen(process.env.PORT, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Server Started!!");
 })
