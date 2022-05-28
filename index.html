@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+  />
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Weather App</title>
   </head>
-  <body>
-    <form action="/" method="post">
-      <input type="text" name="City" placeholder="CityName">
-      <button type="submit" >GO!!</button>
-    </form>
+  <body class="bg-blue-200">
+    <img src="images/wave.png" class="flex w-full absolute" alt="" />
+    <div class="relative">
+      <p
+        class="font-bold text-red-400 pt-8 animate-pulse justify-center flex text-5xl"
+      >
+        Weather App
+      </p>
+      <form
+        action="/"
+        class="pt-36 justify-center item-center w-full flex flex-row"
+        method="post"
+      >
+        <input
+          type="text"
+          class="rounded-lg px-2 py-2 w-1/5"
+          name="City"
+          placeholder="CityName"
+        />
+        <br />
+        <button
+          class="w-1/6 rounded-lg bg-blue-500 hover:bg-blue-700 py-2 px-6 text-white font-bold"
+          type="submit"
+        >
+          GO!!
+        </button>
+      </form>
+    </div>
   </body>
 </html>
